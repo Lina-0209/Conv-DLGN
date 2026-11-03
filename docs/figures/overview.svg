@@ -463,7 +463,7 @@
 <text x="1042" y="145" fill="#bf466a" font-size="13" font-style="italic" text-anchor="middle">g</text>
 <circle cx="1042" cy="169" r="8" stroke="#bf466a" fill="#f9e2e9" stroke-width="1"/>
 <text x="1042" y="173" fill="#bf466a" font-size="13" font-style="italic" text-anchor="middle">g</text>
-<text x="973" y="204" fill="#bf466a" font-size="19" font-weight="bold" text-anchor="middle">Soft gate mixtures</text>
+<text x="973" y="204" fill="#bf466a" font-size="19" font-weight="bold" text-anchor="middle">g: soft logic gate</text>
 </g>
 <path d="M1079 154 L1102 154" fill="none" stroke="#007c99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
 <text x="1181" y="76" fill="#007c99" font-size="21" font-weight="bold" text-anchor="middle">Grouped readout</text>
@@ -499,7 +499,7 @@
 <text x="94" y="250" fill="#597291" font-size="20" text-anchor="middle">Threshold maps</text>
 <text x="94" y="276" fill="#597291" font-size="19" text-anchor="middle">Fixed encoding</text>
 <rect x="196" y="239" width="644" height="38" fill="url(#lavender)" stroke="#d5c7e7" stroke-width="0.9" rx="7"/>
-<text x="518" y="265" fill="#10274c" font-size="23" text-anchor="middle" font-family="STIXGeneral, Times New Roman, serif">Learn gate logits <tspan font-style="italic">θ</tspan> · backpropagate through soft mixtures</text>
+<text x="518" y="265" fill="#10274c" font-size="23" text-anchor="middle" font-family="STIXGeneral, Times New Roman, serif">Soft gate: <tspan font-style="italic">g(a,b)</tspan> = ∑<tspan baseline-shift="sub" font-size="70%">k</tspan> <tspan font-style="italic">p</tspan><tspan baseline-shift="sub" font-size="70%">k</tspan> <tspan font-style="italic">f</tspan><tspan baseline-shift="sub" font-size="70%">k</tspan><tspan font-style="italic">(a,b)</tspan>,   <tspan font-style="italic">p</tspan> = softmax(<tspan font-style="italic">θ</tspan>)</text>
 <rect x="858" y="239" width="132" height="38" fill="url(#pinkhead)" stroke="#de9aae" stroke-width="1" rx="7"/>
 <text x="924" y="264" fill="#ca2345" font-size="23" font-weight="bold" text-anchor="middle">AdamW</text>
 <rect x="1008" y="234" width="248" height="43" fill="url(#pinkhead)" stroke="#de9aae" stroke-width="1" rx="7"/>
@@ -1099,8 +1099,9 @@
 <path d="M684 885.0 L737 885.0" fill="none" stroke="#007c99" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
 <text x="704" y="928" fill="#597291" font-size="19" text-anchor="middle">1 output</text>
 <text x="524" y="1037" fill="#193558" font-size="22" font-weight="bold" text-anchor="middle">depth = 3</text>
-<rect x="40" y="1065" width="705" height="34" fill="url(#softblue)" stroke="#c1d4e4" stroke-width="0.8" rx="6"/>
-<text x="392" y="1089" fill="#315b7b" font-size="19" text-anchor="middle" font-family="STIXGeneral, Times New Roman, serif">The same 7 gate parameter vectors <tspan font-style="italic">θ</tspan> are shared across all spatial locations</text>
+<rect x="40" y="1053" width="705" height="46" fill="url(#softblue)" stroke="#c1d4e4" stroke-width="0.8" rx="6"/>
+<text x="392" y="1073" fill="#315b7b" font-size="19" text-anchor="middle" font-family="STIXGeneral, Times New Roman, serif"><tspan font-style="italic">g</tspan><tspan baseline-shift="sub" font-size="70%">1</tspan>–<tspan font-style="italic">g</tspan><tspan baseline-shift="sub" font-size="70%">7</tspan>: two-input gates; <tspan font-style="italic">f</tspan><tspan baseline-shift="sub" font-size="70%">k</tspan>: 16 relaxed Boolean operators</text>
+<text x="392" y="1093" fill="#315b7b" font-size="19" text-anchor="middle" font-family="STIXGeneral, Times New Roman, serif">The same 7 gate parameter vectors <tspan font-style="italic">θ</tspan> are shared across all spatial locations</text>
 <rect x="784" y="678" width="472" height="222" fill="#fffdf7" stroke="#dfcca2" stroke-width="1" rx="9"/>
 <text x="1020" y="710" fill="#94701b" font-size="23" font-weight="bold" text-anchor="middle">OR pooling · fixed, 2 × 2 / stride 2</text>
 <g id="soft-pool-example" data-input-values="0.2,0.7,0.4,0.1" data-output="0.7">
