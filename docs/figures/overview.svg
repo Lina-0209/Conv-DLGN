@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="1148" viewBox="0 0 1280 1148">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="1550" viewBox="0 0 1280 1550">
 <title>Conv-DLGN pipeline</title><desc>Native vector overview based on Petersen et al., Convolutional Differentiable Logic Gate Networks, NeurIPS 2024, Sections 3, 3.1, 3.2 and Appendix A.1, and repository 13710833172/Conv-DLGN commit 66d9af4ead9b4b289b4472a160ee06c4a22d319c. Panels a and b use the repository CIFAR-10-S profile (k=32, ox=1, tau=20). The local tree has 8 leaves and 7 learned binary gates with fixed local leaf indices and spatially shared parameters. OR pooling is max for soft activations and logical OR for Boolean activations. Residual initialization favors operator 3, identity A. Feature-map textures, reduced graph widths, score slots, pooling values and RGB input are schematic, not measured activations or experimental results. Soft activations use a sequential blue color scale; hard activations use two colors. Exact feature sizes are retained in metadata only.</desc>
 <defs>
 <linearGradient id="blue" x2="0" y2="1"><stop stop-color="#f2faff"/><stop offset="1" stop-color="#cae5ff"/></linearGradient>
@@ -18,7 +18,7 @@
 <marker id="arrow-pink" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#ed8ba1"/></marker>
 </defs>
 <g font-family="Times New Roman, Times, serif">
-<rect x="0" y="0" width="1280" height="1148" fill="white" stroke-width="1" rx="0"/>
+<rect x="0" y="0" width="1280" height="1550" fill="white" stroke-width="1" rx="0"/>
 <g id="panel-a">
 <text x="20" y="29" fill="#10274c" font-size="30" font-weight="bold" text-anchor="start">(a) Soft training · CIFAR-10-S example</text>
 <rect x="12" y="44" width="1256" height="246" fill="none" stroke="#71c7d8" stroke-width="1.2" rx="11" stroke-dasharray="8 5"/>
@@ -1156,4 +1156,281 @@
 <text x="1231" y="1044" fill="#775c91" font-size="20" text-anchor="end">15 others: 9.2%</text>
 <text x="1020" y="1077" fill="#193558" font-size="23" text-anchor="middle" font-family="STIXGeneral, Times New Roman, serif"><tspan font-style="italic">θ</tspan><tspan baseline-shift="sub" font-size="70%">3</tspan> = 5; all other logits = 0</text>
 <text x="1020" y="1103" fill="#775c91" font-size="20" text-anchor="middle">All operator choices remain trainable</text>
+</g>
+<g id="panel-d">
+<text x="20" y="1175" fill="#10274c" font-size="30" font-weight="bold" text-anchor="start">(d) Complete library of 16 two-input Boolean operators</text>
+<rect x="12" y="1195" width="1256" height="341" fill="none" stroke="#71c7d8" stroke-width="1.2" rx="11" stroke-dasharray="8 5"/>
+<text x="640" y="1225" fill="#007c99" font-size="22" font-weight="bold" text-anchor="middle" font-family="STIXGeneral, Times New Roman, serif">Each <tspan font-style="italic">g</tspan> mixes all 16 operators during training; argmax selects one for hard inference</text>
+<g id="boolean-operator-0" data-operator-id="0" data-name="FALSE" data-truth-inputs="00,01,10,11" data-truth-outputs="0000" data-soft-expression="0">
+<rect x="32" y="1243" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="105" y="1267" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle">0 · FALSE</text>
+<text x="105" y="1297" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">0</text>
+<text x="54" y="1325" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="37" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="54" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="88" y="1325" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="71" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="88" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="122" y="1325" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="105" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="122" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="156" y="1325" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="139" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="156" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+</g>
+<g id="boolean-operator-1" data-operator-id="1" data-name="AND" data-truth-inputs="00,01,10,11" data-truth-outputs="0001" data-soft-expression="a*b">
+<rect x="186" y="1243" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="259" y="1267" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle">1 · AND</text>
+<text x="259" y="1297" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">ab</text>
+<text x="208" y="1325" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="191" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="208" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="242" y="1325" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="225" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="242" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="276" y="1325" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="259" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="276" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="310" y="1325" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="293" y="1334" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="310" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+</g>
+<g id="boolean-operator-2" data-operator-id="2" data-name="A ∧ ¬B" data-truth-inputs="00,01,10,11" data-truth-outputs="0010" data-soft-expression="a-a*b">
+<rect x="340" y="1243" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="413" y="1267" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle" font-family="STIXGeneral, Times New Roman, serif">2 · A ∧ ¬B</text>
+<text x="413" y="1297" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">a − ab</text>
+<text x="362" y="1325" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="345" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="362" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="396" y="1325" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="379" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="396" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="430" y="1325" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="413" y="1334" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="430" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="464" y="1325" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="447" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="464" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+</g>
+<g id="boolean-operator-3" data-operator-id="3" data-name="A" data-truth-inputs="00,01,10,11" data-truth-outputs="0011" data-soft-expression="a">
+<rect x="494" y="1243" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="567" y="1267" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle">3 · A</text>
+<text x="567" y="1297" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">a</text>
+<text x="516" y="1325" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="499" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="516" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="550" y="1325" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="533" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="550" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="584" y="1325" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="567" y="1334" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="584" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="618" y="1325" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="601" y="1334" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="618" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+</g>
+<g id="boolean-operator-4" data-operator-id="4" data-name="¬A ∧ B" data-truth-inputs="00,01,10,11" data-truth-outputs="0100" data-soft-expression="b-a*b">
+<rect x="648" y="1243" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="721" y="1267" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle" font-family="STIXGeneral, Times New Roman, serif">4 · ¬A ∧ B</text>
+<text x="721" y="1297" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">b − ab</text>
+<text x="670" y="1325" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="653" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="670" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="704" y="1325" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="687" y="1334" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="704" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="738" y="1325" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="721" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="738" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="772" y="1325" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="755" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="772" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+</g>
+<g id="boolean-operator-5" data-operator-id="5" data-name="B" data-truth-inputs="00,01,10,11" data-truth-outputs="0101" data-soft-expression="b">
+<rect x="802" y="1243" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="875" y="1267" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle">5 · B</text>
+<text x="875" y="1297" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">b</text>
+<text x="824" y="1325" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="807" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="824" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="858" y="1325" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="841" y="1334" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="858" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="892" y="1325" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="875" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="892" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="926" y="1325" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="909" y="1334" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="926" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+</g>
+<g id="boolean-operator-6" data-operator-id="6" data-name="XOR" data-truth-inputs="00,01,10,11" data-truth-outputs="0110" data-soft-expression="a+b-2*a*b">
+<rect x="956" y="1243" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="1029" y="1267" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle">6 · XOR</text>
+<text x="1029" y="1297" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">a + b − 2ab</text>
+<text x="978" y="1325" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="961" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="978" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="1012" y="1325" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="995" y="1334" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1012" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="1046" y="1325" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="1029" y="1334" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1046" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="1080" y="1325" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="1063" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1080" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+</g>
+<g id="boolean-operator-7" data-operator-id="7" data-name="OR" data-truth-inputs="00,01,10,11" data-truth-outputs="0111" data-soft-expression="a+b-a*b">
+<rect x="1110" y="1243" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="1183" y="1267" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle">7 · OR</text>
+<text x="1183" y="1297" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">a + b − ab</text>
+<text x="1132" y="1325" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="1115" y="1334" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1132" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="1166" y="1325" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="1149" y="1334" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1166" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="1200" y="1325" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="1183" y="1334" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1200" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="1234" y="1325" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="1217" y="1334" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1234" y="1355" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+</g>
+<g id="boolean-operator-8" data-operator-id="8" data-name="NOR" data-truth-inputs="00,01,10,11" data-truth-outputs="1000" data-soft-expression="1-a-b+a*b">
+<rect x="32" y="1388" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="105" y="1412" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle">8 · NOR</text>
+<text x="105" y="1442" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">1 − a − b + ab</text>
+<text x="54" y="1470" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="37" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="54" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="88" y="1470" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="71" y="1479" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="88" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="122" y="1470" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="105" y="1479" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="122" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="156" y="1470" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="139" y="1479" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="156" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+</g>
+<g id="boolean-operator-9" data-operator-id="9" data-name="XNOR" data-truth-inputs="00,01,10,11" data-truth-outputs="1001" data-soft-expression="1-a-b+2*a*b">
+<rect x="186" y="1388" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="259" y="1412" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle">9 · XNOR</text>
+<text x="259" y="1442" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">1 − a − b + 2ab</text>
+<text x="208" y="1470" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="191" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="208" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="242" y="1470" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="225" y="1479" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="242" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="276" y="1470" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="259" y="1479" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="276" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="310" y="1470" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="293" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="310" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+</g>
+<g id="boolean-operator-10" data-operator-id="10" data-name="¬B" data-truth-inputs="00,01,10,11" data-truth-outputs="1010" data-soft-expression="1-b">
+<rect x="340" y="1388" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="413" y="1412" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle">10 · ¬B</text>
+<text x="413" y="1442" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">1 − b</text>
+<text x="362" y="1470" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="345" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="362" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="396" y="1470" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="379" y="1479" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="396" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="430" y="1470" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="413" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="430" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="464" y="1470" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="447" y="1479" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="464" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+</g>
+<g id="boolean-operator-11" data-operator-id="11" data-name="B ⇒ A" data-truth-inputs="00,01,10,11" data-truth-outputs="1011" data-soft-expression="1-b+a*b">
+<rect x="494" y="1388" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="567" y="1412" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle" font-family="STIXGeneral, Times New Roman, serif">11 · B ⇒ A</text>
+<text x="567" y="1442" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">1 − b + ab</text>
+<text x="516" y="1470" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="499" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="516" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="550" y="1470" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="533" y="1479" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="550" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="584" y="1470" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="567" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="584" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="618" y="1470" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="601" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="618" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+</g>
+<g id="boolean-operator-12" data-operator-id="12" data-name="¬A" data-truth-inputs="00,01,10,11" data-truth-outputs="1100" data-soft-expression="1-a">
+<rect x="648" y="1388" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="721" y="1412" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle">12 · ¬A</text>
+<text x="721" y="1442" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">1 − a</text>
+<text x="670" y="1470" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="653" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="670" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="704" y="1470" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="687" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="704" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="738" y="1470" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="721" y="1479" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="738" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="772" y="1470" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="755" y="1479" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="772" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+</g>
+<g id="boolean-operator-13" data-operator-id="13" data-name="A ⇒ B" data-truth-inputs="00,01,10,11" data-truth-outputs="1101" data-soft-expression="1-a+a*b">
+<rect x="802" y="1388" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="875" y="1412" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle" font-family="STIXGeneral, Times New Roman, serif">13 · A ⇒ B</text>
+<text x="875" y="1442" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">1 − a + ab</text>
+<text x="824" y="1470" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="807" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="824" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="858" y="1470" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="841" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="858" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="892" y="1470" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="875" y="1479" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="892" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+<text x="926" y="1470" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="909" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="926" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+</g>
+<g id="boolean-operator-14" data-operator-id="14" data-name="NAND" data-truth-inputs="00,01,10,11" data-truth-outputs="1110" data-soft-expression="1-a*b">
+<rect x="956" y="1388" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="1029" y="1412" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle">14 · NAND</text>
+<text x="1029" y="1442" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">1 − ab</text>
+<text x="978" y="1470" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="961" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="978" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="1012" y="1470" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="995" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1012" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="1046" y="1470" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="1029" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1046" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="1080" y="1470" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="1063" y="1479" width="34" height="28" fill="#f0f5f9" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1080" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">0</text>
+</g>
+<g id="boolean-operator-15" data-operator-id="15" data-name="TRUE" data-truth-inputs="00,01,10,11" data-truth-outputs="1111" data-soft-expression="1">
+<rect x="1110" y="1388" width="146" height="132" fill="#fcfdff" stroke="#b9cedd" stroke-width="0.9" rx="5"/>
+<text x="1183" y="1412" fill="#ca2345" font-size="21" font-weight="bold" text-anchor="middle">15 · TRUE</text>
+<text x="1183" y="1442" fill="#193558" font-size="20" font-style="italic" text-anchor="middle">1</text>
+<text x="1132" y="1470" fill="#597291" font-size="18" text-anchor="middle">00</text>
+<rect x="1115" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1132" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="1166" y="1470" fill="#597291" font-size="18" text-anchor="middle">01</text>
+<rect x="1149" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1166" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="1200" y="1470" fill="#597291" font-size="18" text-anchor="middle">10</text>
+<rect x="1183" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1200" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+<text x="1234" y="1470" fill="#597291" font-size="18" text-anchor="middle">11</text>
+<rect x="1217" y="1479" width="34" height="28" fill="#d4e9fa" stroke="#c0d0df" stroke-width="0.5" rx="0"/>
+<text x="1234" y="1500" fill="#193558" font-size="21" font-weight="bold" text-anchor="middle">1</text>
+</g>
 </g></g></svg>
